@@ -14,7 +14,7 @@ for(let i=0;i<7;i++) {
 const board          = document.getElementById("board");
 board.appendChild(boardImage);
 
-let game = [][];
+let game = [];
 
 let status = "Init";
 
