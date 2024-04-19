@@ -9,9 +9,10 @@ for(let i=0;i<7;i++) {
     let temp = document.createElement("button");
     temp.setAttribute("id","button"+i.toString(10));
     temp.textContent = (i+1).toString(10);
-    temp.disabled = true;
+    //temp.disabled = true;
     columnButtons.appendChild(temp);
 }
+columnButtons.disabled = true;
 const board          = document.getElementById("board");
 board.appendChild(boardImage);
 
