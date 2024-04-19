@@ -27,7 +27,7 @@ let status = "Init";
 playButton.addEventListener("click", () => {
     try {
         status = "Playing";
-        setColumnButtons(false);
+        enableColumnButtons();
         update();
         playButton.disabled = true;
     } catch(err) {
@@ -38,7 +38,6 @@ playButton.addEventListener("click", () => {
 resetButton.addEventListener("click", () => {
     try {
         status = "Init";
-        setColumnButtons(true);
         update();
         playButton.disabled = false;
     } catch(err) {
@@ -50,20 +49,22 @@ function update() {
     display.innerHTML = "--- "+status+" ---";
 }
 
-/**
- * column must be int 1-7
- * player must be int 1-2
- */
-function dropDisc(column, player) {
-    //game
+function disablePlayButton() {
+    playButton.disabled = true;
 }
 
 /**
- * flag must be true/false
+ * column must be int 0-6
+ * player must be int 1-2
  */
-function setColumnButtons(flag) {
+function dropDisc(column, player) {
+    let c = game.map((r,i) => r[column]);
+    console.log(c);
+}
+
+function enableColumnButtons() {
     for(let i=0;i<7;i++) {
         let t = document.getElementById("button"+i);
-        t.disabled = flag;
+        t.disbaled = false;
     }
 }
