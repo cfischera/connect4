@@ -14,7 +14,12 @@ for(let i=0;i<7;i++) {
 const board          = document.getElementById("board");
 board.appendChild(boardImage);
 
-let game = [];
+var game = Array(6);
+for(let i=0;i<6;i++) {
+    game[i].push(Array(7).fill(0));
+}
+
+console.log(game);
 
 let status = "Init";
 
@@ -46,6 +51,7 @@ function disablePlayButton() {
     playButton.disabled = true;
 }
 
+/** Column choice must be int 1-7 */
 function dropDisc(column) {
-
+    game
 }
