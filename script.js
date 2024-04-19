@@ -5,7 +5,7 @@ const playButton    = document.getElementById("playButton");
 const display       = document.getElementById("display");
 const columnButtons = document.getElementById("columnButtons");
 for(let i=0;i<7;i++) {
-    let temp = docuemnt.createElement("button");
+    let temp = document.createElement("button");
     temp.textContent = i;
     columnButtons.appendChild(temp);
 }
