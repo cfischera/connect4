@@ -60,6 +60,6 @@ function dropDisc(column, player) {
 function enableColumnButtons() {
     for(let i=0;i<7;i++) {
         let t = document.getElementById("button"+i);
-        t.disbaled = false;
+        t.disabled = false;
     }
 }
