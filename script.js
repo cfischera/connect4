@@ -9,11 +9,10 @@ for(let i=0;i<7;i++) {
     let temp = document.createElement("button");
     temp.setAttribute("id","button"+i.toString(10));
     temp.textContent = (i+1).toString(10);
-    //temp.disabled = true;
+    temp.disabled = true;
     columnButtons.appendChild(temp);
 }
-columnButtons.disabled = true;
-const board          = document.getElementById("board");
+const board         = document.getElementById("board");
 board.appendChild(boardImage);
 
 var game = Array();
@@ -28,6 +27,7 @@ let status = "Init";
 playButton.addEventListener("click", () => {
     try {
         status = "Playing";
+        enableColumnButtons();
         update();
         playButton.disabled = true;
     } catch(err) {
@@ -53,7 +53,17 @@ function disablePlayButton() {
     playButton.disabled = true;
 }
 
-/** Column choice must be int 1-7 */
-function dropDisc(column) {
-    game
+/**
+ * column must be int 1-7
+ * player must be int 1-2
+ */
+function dropDisc(column, player) {
+    //game
+}
+
+function enableColumnButtons() {
+    for(let i=0;i<7;i++) {
+        let t = document.getElementById("button"+i);
+        t.disbaled = false;
+    }
 }
