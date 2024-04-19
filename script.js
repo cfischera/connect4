@@ -16,7 +16,7 @@ board.appendChild(boardImage);
 
 var game = Array(6);
 for(let i=0;i<6;i++) {
-    game[i].push(Array(7).fill(0));
+    game.push(Array(7).fill(0));
 }
 
 console.log(game);
