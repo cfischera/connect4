@@ -49,10 +49,6 @@ function update() {
     display.innerHTML = "--- "+status+" ---";
 }
 
-function disablePlayButton() {
-    playButton.disabled = true;
-}
-
 /**
  * column must be int 1-7
  * player must be int 1-2
