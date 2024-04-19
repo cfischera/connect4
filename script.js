@@ -34,7 +34,6 @@ resetButton.addEventListener("click", () => {
         status = "Init";
         update();
         playButton.disabled = false;
-        ();
     } catch(err) {
         alert(err.message);
     }
