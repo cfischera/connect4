@@ -1,15 +1,30 @@
-/** JS script for connect 4
-  * First to make a playable connect 4 board and game
-  * Then minimax algo to make a connect 4 bot
-  */
+const boardImage = new Image();
+boardImage.src = "images/board.png"
 
-const playButton = document.getElementById("playButton");
-const display    = document.getElementById("display");
+const playButton    = document.getElementById("playButton");
+const display       = document.getElementById("display");
+const columnButtons = document.getElementById("columnButtons");
+for(let i=0;i<7;i++) {
+    let temp = docuemnt.createElement("button");
+    temp.textContent = i;
+    columnButtons.appendChild(temp);
+}
+const board         = document.getElementById("board");
+board.appendChild(boardImage);
 
-playButton.addEventListener("click", function() {
+
+
+let status = "Init";
+
+playButton.addEventListener("click", () => {
     try {
-        display.innerHTML = "--- Play Button Activated ---";
+        status = "Playing";
+        update();
     } catch(err) {
         alert(err.message);
     }
 });
+
+function update() {
+    display.innerHTML = "--- "+status+" ---";
+}
