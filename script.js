@@ -29,6 +29,7 @@ playButton.addEventListener("click", () => {
         status = "Playing";
         enableColumnButtons();
         update();
+        dropDisc(1,1);
         playButton.disabled = true;
     } catch(err) {
         alert(err.message);
