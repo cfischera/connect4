@@ -3,7 +3,9 @@ boardImage.src = "images/board.png"
 
 const playButton    = document.getElementById("playButton");
 const display       = document.getElementById("display");
-let columnButtons = document.getElementById("columnButtons");
+const columnButtons = document.getElementById("columnButtons");
+const testDiv = document.getElementById("testDiv");
+console.log(testDiv);
 console.log(columnButtons);
 for(let i=0;i<7;i++) {
     let temp = document.createElement("button");
