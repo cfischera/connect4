@@ -6,7 +6,7 @@ const display       = document.getElementById("display");
 const columnButtons = document.getElementById("columnButtons");
 for(let i=0;i<7;i++) {
     let temp = document.createElement("button");
-    temp.textContent = i+1.toString(10);
+    temp.textContent = (i+1).toString(10);
     columnButtons.appendChild(temp);
 }
 const board         = document.getElementById("board");
