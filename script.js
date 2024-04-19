@@ -14,7 +14,7 @@ for(let i=0;i<7;i++) {
 const board          = document.getElementById("board");
 board.appendChild(boardImage);
 
-var game = Array(6);
+var game = Array();
 for(let i=0;i<6;i++) {
     game.push(Array(7).fill(0));
 }
