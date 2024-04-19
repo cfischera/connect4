@@ -61,6 +61,7 @@ function dropDisc(column, player) {
     let c = game.map((r,i) => r[column]);
     let r = c.lastIndexOf(0);
     console.log(r);
+    console.log("here");
 }
 
 function enableColumnButtons() {
