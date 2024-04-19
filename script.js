@@ -29,7 +29,6 @@ playButton.addEventListener("click", () => {
         status = "Playing";
         enableColumnButtons();
         update();
-        dropDisc(1,1);
         playButton.disabled = true;
     } catch(err) {
         alert(err.message);
@@ -60,7 +59,8 @@ function disablePlayButton() {
  */
 function dropDisc(column, player) {
     let c = game.map((r,i) => r[column]);
-    console.log(c);
+    let r = c.lastIndexOf(0);
+    console.log(r);
 }
 
 function enableColumnButtons() {
