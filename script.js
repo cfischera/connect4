@@ -20,16 +20,17 @@ for(let i=0;i<6;i++) {
     game.push(Array(7).fill(0));
 }
 
-console.log(game);
-
 let status = "Init";
+
+let player = 1;
 
 playButton.addEventListener("click", () => {
     try {
-        status = "Playing";
-        enableColumnButtons();
-        update();
+        disableColumnButtons(false);
+        player = 1;
         playButton.disabled = true;
+        status = "Player "+player+"'s Turn";
+        update();
     } catch(err) {
         alert(err.message);
     }
@@ -38,6 +39,7 @@ playButton.addEventListener("click", () => {
 resetButton.addEventListener("click", () => {
     try {
         status = "Init";
+        disableColumnButtons(true);
         update();
         playButton.disabled = false;
     } catch(err) {
@@ -46,27 +48,83 @@ resetButton.addEventListener("click", () => {
 });
 
 function update() {
+    drawDiscs();
     display.innerHTML = "--- "+status+" ---";
-}
-
-function disablePlayButton() {
-    playButton.disabled = true;
 }
 
 /**
  * column must be int 0-6
- * player must be int 1-2
+ * player must be int 1 or -1
  */
-function dropDisc(column, player) {
-    let c = game.map((r,i) => r[column]);
+function dropDisc(column) {
+    let c = game.map((r) => r[column]);
     let r = c.lastIndexOf(0);
-    console.log(r);
-    console.log("here");
+    game[r][c] = player;
+    if(r==0) {
+        document.getElementById("button"+i).disabled = true;
+    }
+    player = -player
+    status = "Player "+player+"'s Turn";
+    update();
 }
 
-function enableColumnButtons() {
+function disableColumnButtons(flag) {
     for(let i=0;i<7;i++) {
         let t = document.getElementById("button"+i);
-        t.disbaled = false;
+        t.disabled = flag;
     }
 }
+
+function drawDiscs() {
+
+}
+
+document.getElementById("button0").addEventListener("click", () => {
+    try {
+        dropDisc(0);
+    } catch(err) {
+        alert(err.message);
+    }
+});
+document.getElementById("button1").addEventListener("click", () => {
+    try {
+        dropDisc(1);
+    } catch(err) {
+        alert(err.message);
+    }
+});
+document.getElementById("button2").addEventListener("click", () => {
+    try {
+        dropDisc(2);
+    } catch(err) {
+        alert(err.message);
+    }
+});
+document.getElementById("button3").addEventListener("click", () => {
+    try {
+        dropDisc(3);
+    } catch(err) {
+        alert(err.message);
+    }
+});
+document.getElementById("button4").addEventListener("click", () => {
+    try {
+        dropDisc(4);
+    } catch(err) {
+        alert(err.message);
+    }
+});
+document.getElementById("button5").addEventListener("click", () => {
+    try {
+        dropDisc(5);
+    } catch(err) {
+        alert(err.message);
+    }
+});
+document.getElementById("button6").addEventListener("click", () => {
+    try {
+        dropDisc(6);
+    } catch(err) {
+        alert(err.message);
+    }
+});
