@@ -63,7 +63,7 @@ function dropDisc(column) {
     if(r==0) {
         document.getElementById("button"+i).disabled = true;
     }
-    player = (player+1)%2;
+    player = 3-player;
     status = "Player "+player+"'s Turn";
     update();
 }
