@@ -1,4 +1,19 @@
 body {
-  background-color: #000000;
-  color: #ffffff;
-}
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  #board {
+    display: grid;
+    grid-template-rows: repeat(6, 100px);
+    grid-template-columns: repeat(7, 100px);
+    width: 700px;
+    height: 600px;
+    margin: 0 auto;
+  }
+
+  .cell {
+    border: 3px solid #ffffff;
+    border-radius : 50%;
+    outline: 3px solid #ffffff;
+  }
