@@ -69,7 +69,7 @@ function update() {
 
 /**
  * column must be int 0-6
- * player must be int 1 or -1
+ * player must be int 1 or 2
  */
 function dropDisc(c) {
     let column = game.map((x) => x[c]);
